@@ -1,0 +1,99 @@
+:root {
+    box-sizing: border-box;
+    font-size: 0.875rem;
+    font-family: "Rubik", "sans-serif";
+    --white: #ffffff;
+    --green: #198754;
+    --dark: #292a2b;
+    --blue: #0d6efd;
+    --indigo: #6610f2;
+    --purple: #6f42c1;
+    --pink: #d63384;
+    --red: #dc3545;
+    --orange: #fd7e14;
+    --yellow: #ffc107;
+    --teal: #20c997;
+    --cyan: #0dcaf0;
+}
+
+*,
+::before,
+::after {
+    padding: 0;
+    margin: 0;
+    border: 0;
+    box-sizing: inherit;
+    outline: 0 none;
+}
+
+body {
+    background-color: var(--dark);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+div {
+    display: flex;
+    justify-content: center;
+    color: var(--white);
+    font-size: 1.7rem;
+    align-items: center;
+    width: 150px;
+    height: 150px;
+    background-color: var(--green);
+    margin-top: 5%;
+    min-height: 150px;
+  }
+div#droptarget{
+    background-color: var(--blue);
+    flex-direction: column;
+}
+span {
+    display: block;
+    width: 100%;
+    text-align: center;
+    border: 1px solid var(--dark);
+    margin: .5em auto;
+    padding: .5em 0;
+    border-radius: .3rem;
+  }
+  #carro {
+    height: auto;            /* ← muy importante */
+    min-height: 150px;
+    width: 60%;
+    margin: 3em auto;
+    background-color: var(--yellow);
+    padding: 1em;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.5em;
+    opacity: 0;
+  }
+  #carro.visible {
+    opacity: 1;
+  }
+
+
+/* Small devices (phones, 576px and up) */
+@media (min-width: 576px) {
+    ...
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+    ...
+}
+
+/* Large devices (desktops, 992px and up) 
+  @media (min-width: 992px) { ... }
+  
+  /* Extra large devices (large desktops, 1200px and up)*/
+@media (min-width: 1200px) {
+    ...
+}
+
+/* XXL devices (Bootstrap 5, 1400px and up) */
+@media (min-width: 1400px) {
+    ...
+}
