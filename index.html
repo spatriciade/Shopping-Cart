@@ -3,29 +3,61 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Drag&Drop</title>
-    <link rel="stylesheet" href="/CSS/style.css" />
-    <title>Task-list</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <title>Shopping Cart</title>
+    <!--Bootstrap CSS-->
     <link
-      href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;700&family=Lato:ital,wght@0,100;0,400;0,700&family=Smooch+Sans:wght@100;400;700&display=swap"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css"
       rel="stylesheet"
+      integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT"
+      crossorigin="anonymous"
     />
-
+    <link rel="stylesheet" href="/CSS/style.css" />
     <script
       src="https://kit.fontawesome.com/e55251c686.js"
       crossorigin="anonymous"
     ></script>
   </head>
   <body>
-    <div draggable="true" class="dragtarget">Caja Verde</div>
-    <div draggable="true" class="dragtarget">Caja Verde 2</div>
-  <div id="droptarget"></div>
-  <div id="carro"></div>
-
-
-    
+    <header
+      class="d-flex flex-column flex-sm-row justify-content-between align-items-center py-4 px-sm-5 mb-3 border-bottom shadow-sm fixed-top bg-success text-white"
+    >
+      <h5 class="d-flex align-items-center my-2 me-md-auto font-weight-bold">
+        <i class="fa-solid fa-bag-shopping fa-2x"></i>
+        <span class="logo ms-3">Shopping Cart</span>
+      </h5>
+      <nav class="d-flex align-items-center my-2 my-md-0 me-md-3">
+        <a
+        class="p-2"
+          href="#"          
+          data-bs-toggle="modal"
+          data-bs-target="#shoppingCart"
+          id="cart"
+        >
+          <i class="fa-solid fa-basket-shopping fa-3x me-sm-5 me-3"></i>
+        </a>
+        <a class="btn btn-dark btn-lg" href="#" >Sign Up</a>
+      </nav>
+    </header>
+    <!-- infosection -->
+    <section class="pricing-header p-3 pt-md-5 pb-md-4 text-center">  
+  
+  <h1 class="display-4">Drag&amp;Drop</h1>
+  <p class="lead mb-0">You can add your products to the cart easily.</p>
+  <p class="lead">Drag the image,and it will be added to your purchase</p>
+    </section>
+    <!-- Product container -->
+     <main class="text-center px-5 px-sm-3">
+      <div class="card-deck mb-3 d-flex flex-wrap justify-content-around" id="products list"></div>
+     </main>
+     <footer class="d-md-flex justify-content-center align-items-cente p-4 p-md-5 border-top text-center bg-dark text-white">
+      Made with <i class="fa-solid fa-heart text-danger mx-1 fa-beat"></i> by CODE SPACE TEAM - <span class="date"></span>
+     </footer>
   </body>
+  <!-- Bootstrap JS Bundle with Popper -->
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO"
+    crossorigin="anonymous"
+  ></script>
   <script src="/JS ShopCart/app.js"></script>
 </html>
