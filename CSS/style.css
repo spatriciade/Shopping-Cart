@@ -45,7 +45,7 @@ body {
 }
 
 .logo {
-    font-size: 1.9 rem;
+    font-size: 1.9rem;
     color: #ffc107;
 }
 
@@ -58,8 +58,6 @@ body {
 .fa-basket-shopping:hover {
     color: #c61a27 !important;
     opacity: 0.9;
-    -webkit-transform: rotateZ(-30deg);
-    -ms-transform: rotateZ(-30deg);
     transform: rotateZ(-30deg);
 }
 
@@ -69,52 +67,60 @@ button.close:focus {
 }
 
 /* shopping cart animation */
-@-webkit-keyframes hrv-pulse {
+@keyframes hrv-pulse {
     25% {
-        -webkit-transform: : scale(1.1);
         transform: scale(1.1);
     }
 
     75% {
-        -webkit-transform: : scale(0.9);
         transform: scale(0.9);
     }
 }
 
-.hrv-pulse {
+.hvr-pulse {
     display: inline-block;
     vertical-align: middle;
-    -webkit-transform: perspective(1px) translateZ(0);
     transform: perspective(1px) translateZ(0);
-    -webkit-animation-name: hrv-pulse;
     animation-name: hrv-pulse;
 }
-h4,
-h5.modal-title{
-    font-family: "Comfortaa",cursive;
 
+/* Headings */
+h4,
+h5.modal-title {
+    font-family: "Comfortaa", cursive;
 }
-h5{
-    font-family: "Pacifico",cursive;
+
+h5 {
+    font-family: "Pacifico", cursive;
 }
+
 /* Product cards */
-.card-dek .card{
+.card-deck .card {
     width: 100%;
     transition: all 0.2s ease;
 }
-.card-deck .card:hover{
-    box-shadow: 1px 1px #53a7ea, 2px 2px #53a7ea,3px 3px #53a7ea;
-    -webkit-transform: translateX(-3px);
+
+.card-deck .card:hover {
+    box-shadow: 1px 1px #53a7ea, 2px 2px #53a7ea, 3px 3px #53a7ea;
     transform: translateX(-3px);
 }
 
+/* Quantity Selectors */
+.quantity {
+    position: relative;
+}
 
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
 
+input[type="number"] {
+    -moz-appearance: textfield;
+}
 
-
-
-
-/* Small devices (phones, 576px and up) */
+/* Responsive Design */
 @media (min-width: 576px) {
     body {
         padding-top: 8.5rem;
@@ -129,7 +135,6 @@ h5{
     }
 }
 
-/* Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) {
     body {
         padding-top: 5.5rem;
@@ -143,20 +148,15 @@ h5{
         font-size: 1.8rem;
     }
 }
-}
 
-/* Large devices (desktops, 992px and up) 
-  @media (min-width: 992px) { ... }
-  
-  /* Extra large devices (large desktops, 1200px and up)*/
 @media (min-width: 1200px) {
     .card-deck .card {
         max-width: 22%;
     }
+}
 
-    /* XXL devices (Bootstrap 5, 1400px and up) */
-    @media (min-width: 1400px) {
-        .card-deck .card {
-            max-width: 14%;
-        }
+@media (min-width: 1400px) {
+    .card-deck .card {
+        max-width: 14%;
     }
+}

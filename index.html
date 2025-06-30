@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Shopping Cart</title>
-    <!--Bootstrap CSS-->
+    <!-- Bootstrap CSS -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -27,37 +27,182 @@
       </h5>
       <nav class="d-flex align-items-center my-2 my-md-0 me-md-3">
         <a
-        class="p-2"
-          href="#"          
+          class="p-2"
+          href="#"
           data-bs-toggle="modal"
           data-bs-target="#shoppingCart"
           id="cart"
         >
           <i class="fa-solid fa-basket-shopping fa-3x me-sm-5 me-3"></i>
         </a>
-        <a class="btn btn-dark btn-lg" href="#" >Sign Up</a>
+        <a class="btn btn-dark btn-lg" href="#">Sign Up</a>
       </nav>
     </header>
-    <!-- infosection -->
-    <section class="pricing-header p-3 pt-md-5 pb-md-4 text-center">  
-  
-  <h1 class="display-4">Drag&amp;Drop</h1>
-  <p class="lead mb-0">You can add your products to the cart easily.</p>
-  <p class="lead">Drag the image,and it will be added to your purchase</p>
+    <!-- Modal Carts -->
+    <div
+      class="modal fade"
+      id="shoppingCart"
+      data-bs-backdrop="static"
+      data-bs-keyboard="false"
+      tabindex="-1"
+      aria-labelledby="shoppingCartLabel"
+      aria-hidden="true"
+    >
+      <div
+        class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable"
+      >
+        <div class="modal-content">
+          <div
+            class="modal-header d-flex align-items-center justify-content-between px-4"
+          >
+            <i class="fa-solid fa-cart-shopping fa-2x me-3 text-success"> </i>
+            <h5 class="modal-title text-dark" id="shoppingCartLabel">
+              <strong>Your Shopping</strong>
+            </h5>
+            <button
+              type="button"
+              class="btn-close text-danger fw-bolder border-0 bg-white"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true"
+                ><i class="fa-solid fa-circle-xmark fa-2x"></i
+              ></span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <table class="table table-striped table-hover">
+              <thead class="thead-dark text-center">
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">item</th>
+                  <th scope="col">price</th>
+                  <th scope="col">quantity</th>
+                </tr>
+              </thead>
+              <tbody>
+                <!-- Dinamically add product -->
+              </tbody>
+            </table>
+          </div>
+          <div class="modal-footer">
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col">
+                  <h4>
+                    <i class="fa-solid fa-money-bills fa-2x me-2"></i>Subtotal:
+                    <span id="total-count">0</span>
+                  </h4>
+                </div>
+                <div class="col text-right">
+                  <button
+                    class="disabled btn btn-danger mb-2"
+                    type="button"
+                    id="empty-cart"
+                  >
+                    Empty this cart
+                  </button>
+                  <button
+                    class="disabled btn btn-primary ms-2 mb-2"
+                    data-bs-dismiss="modal"
+                    data-bs-toggle="modal"
+                    type="button"
+                    id="btn-purchase"
+                  >
+                    Check Out!
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Modal Alert -->
+    <div
+      class="modal fade"
+      id="cartPurchased"
+      tabindex="-1"
+      aria-labelledby="alert1"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content alert alert-success" role="alert">
+          <p class="text-center alert-heading pt-3">
+            <strong>Done!</strong>Thanks for your purchase!
+            <i class="fa-solid fa-face-laugh-wink"></i>
+            <i class="fa-solid fa-thumbs-up"></i>
+            <i class="fa-solid fa-thumbs-up"></i>
+          </p>
+        </div>
+      </div>
+    </div>
+    <div
+      class="modal fade"
+      id="addedToCart"
+      tabindex="-1"
+      aria-labelledby="alert2"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content alert alert-info" role="alert">
+          <p class="text-center alert-heading pt-3">
+            <strong>Done!</strong>Product added to your wishlist.
+
+            <i class="fa-solid fa-circle-check"></i>
+          </p>
+        </div>
+      </div>
+    </div>
+    <div
+      class="modal fade"
+      id="alreadyAddedToCart"
+      tabindex="-1"
+      aria-labelledby="alert3"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content alert alert-warning" role="alert">
+          <p class="text-center alert-heading pt-3">
+            <strong>Already Added!</strong>Go to your card to change quantity
+
+            <i class="fa-solid fa-circle-exclamation"></i>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Info section -->
+    <section class="pricing-header p-3 pt-md-5 pb-md-4 text-center">
+      <h1 class="display-4">Drag&amp;Drop</h1>
+      <p class="lead mb-0">You can add your products to the cart easily.</p>
+      <p class="lead">Drag the image, and it will be added to your purchase</p>
     </section>
+
     <!-- Product container -->
-     <main class="text-center px-5 px-sm-3">
-      <div class="card-deck mb-3 d-flex flex-wrap justify-content-around" id="products list"></div>
-     </main>
-     <footer class="d-md-flex justify-content-center align-items-cente p-4 p-md-5 border-top text-center bg-dark text-white">
-      Made with <i class="fa-solid fa-heart text-danger mx-1 fa-beat"></i> by CODE SPACE TEAM - <span class="date"></span>
-     </footer>
+    <main class="text-center px-5 px-sm-3">
+      <div
+        class="card-deck mb-3 d-flex flex-wrap justify-content-around"
+        id="products-list"
+      ></div>
+    </main>
+
+    <footer
+      class="d-md-flex justify-content-center align-items-cente p-4 p-md-5 border-top text-center bg-dark text-white"
+    >
+      Made with <i class="fa-solid fa-heart text-danger mx-1 fa-beat"></i> by
+      CODE SPACE TEAM - <span class="date"></span>
+    </footer>
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- CORRECT ORDER -->
+    <script src="/JS ShopCart/core.js"></script>
+    <script src="/JS ShopCart/app.js"></script>
   </body>
-  <!-- Bootstrap JS Bundle with Popper -->
-  <script
-    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO"
-    crossorigin="anonymous"
-  ></script>
-  <script src="/JS ShopCart/app.js"></script>
 </html>
