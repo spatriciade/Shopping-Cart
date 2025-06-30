@@ -1,4 +1,4 @@
-:root {
+/* :root {
     box-sizing: border-box;
     font-size: 0.875rem;
     font-family: "Rubik", "sans-serif";
@@ -24,76 +24,139 @@
     border: 0;
     box-sizing: inherit;
     outline: 0 none;
+} */
+
+@import url('https://fonts.googleapis.com/css2?family=Antic&family=Comfortaa:wght@500;600&family=Kameron:wght@400;700&family=Pacifico&display=swap');
+
+html {
+    font-size: 0.785rem;
 }
 
 body {
-    background-color: var(--dark);
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
+    font-family: "Antic", "serif";
+    height: 100vh;
+    padding-top: 11.5rem;
 }
-div {
-    display: flex;
-    justify-content: center;
-    color: var(--white);
-    font-size: 1.7rem;
-    align-items: center;
-    width: 150px;
-    height: 150px;
-    background-color: var(--green);
-    margin-top: 5%;
-    min-height: 150px;
-  }
-div#droptarget{
-    background-color: var(--blue);
-    flex-direction: column;
+
+/* Header */
+.fa-bag-shopping {
+    color: #222222;
+    transform: rotate(25deg);
 }
-span {
-    display: block;
-    width: 100%;
-    text-align: center;
-    border: 1px solid var(--dark);
-    margin: .5em auto;
-    padding: .5em 0;
-    border-radius: .3rem;
-  }
-  #carro {
-    height: auto;            /* ← muy importante */
-    min-height: 150px;
-    width: 60%;
-    margin: 3em auto;
-    background-color: var(--yellow);
-    padding: 1em;
-    display: flex;
-    flex-direction: column;
-    align-items: stretch;
-    gap: 0.5em;
-    opacity: 0;
-  }
-  #carro.visible {
+
+.logo {
+    font-size: 1.9rem;
+    color: #ffc107;
+}
+
+.fa-basket-shopping {
+    color: #fefefe;
     opacity: 1;
-  }
+    transition: all 0.2s ease;
+}
 
+.fa-basket-shopping:hover {
+    color: #c61a27 !important;
+    opacity: 0.9;
+    transform: rotateZ(-30deg);
+}
 
-/* Small devices (phones, 576px and up) */
+/* Modals */
+button.close:focus {
+    outline: none;
+}
+
+/* shopping cart animation */
+@keyframes hrv-pulse {
+    25% {
+        transform: scale(1.1);
+    }
+
+    75% {
+        transform: scale(0.9);
+    }
+}
+
+.hvr-pulse {
+    display: inline-block;
+    vertical-align: middle;
+    transform: perspective(1px) translateZ(0);
+    animation-name: hrv-pulse;
+}
+
+/* Headings */
+h4,
+h5.modal-title {
+    font-family: "Comfortaa", cursive;
+}
+
+h5 {
+    font-family: "Pacifico", cursive;
+}
+
+/* Product cards */
+.card-deck .card {
+    width: 100%;
+    transition: all 0.2s ease;
+}
+
+.card-deck .card:hover {
+    box-shadow: 1px 1px #53a7ea, 2px 2px #53a7ea, 3px 3px #53a7ea;
+    transform: translateX(-3px);
+}
+
+/* Quantity Selectors */
+.quantity {
+    position: relative;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+
+/* Responsive Design */
 @media (min-width: 576px) {
-    ...
+    body {
+        padding-top: 8.5rem;
+    }
+
+    .card-deck .card {
+        max-width: 45%;
+    }
+
+    footer {
+        font-size: 1.5rem;
+    }
 }
 
-/* Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) {
-    ...
+    body {
+        padding-top: 5.5rem;
+    }
+
+    .card-deck .card {
+        max-width: 30%;
+    }
+
+    footer {
+        font-size: 1.8rem;
+    }
 }
 
-/* Large devices (desktops, 992px and up) 
-  @media (min-width: 992px) { ... }
-  
-  /* Extra large devices (large desktops, 1200px and up)*/
 @media (min-width: 1200px) {
-    ...
+    .card-deck .card {
+        max-width: 22%;
+    }
 }
 
-/* XXL devices (Bootstrap 5, 1400px and up) */
 @media (min-width: 1400px) {
-    ...
+    .card-deck .card {
+        max-width: 14%;
+    }
 }
